@@ -18,9 +18,9 @@ trait TwitterConnect {
     self: TwitterConfig =>
 
     /**
-     * Gets the request token.
+     * Gets the twitter request token.
      *
-     * @return the request token
+     * @return the twitter request token
      */
     def getTwitterRequestToken: RequestToken = {
         val twitter: Twitter = new TwitterFactory().getInstance;
@@ -29,21 +29,21 @@ trait TwitterConnect {
     }
 
     /**
-     * Gets the authorize url.
+     * Gets the twitter authorize url.
      *
      * @param requestToken the request token
-     * @return the authorize url
+     * @return the twitter authorize url
      */
     def getTwitterAuthorizeURL(requestToken: RequestToken): String = {
         requestToken.getAuthorizationURL()
     }
 
     /**
-     * Gets the access token.
+     * Gets the twitter access token.
      *
      * @param requestToken the request token
      * @param verifier the verifier
-     * @return the access token
+     * @return the twitter access token
      */
     def getTwitterAccessToken(requestToken: RequestToken, verifier: String): AccessToken = {
         val twitter: Twitter = new TwitterFactory().getInstance;
